@@ -1,5 +1,5 @@
 import time
-from prefect import task
+from prefect import task, get_run_logger
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
@@ -27,7 +27,7 @@ def input_data_at_login(in_driver):
     try:
         WebDriverWait(driver=in_driver, timeout=30).until(ec.presence_of_element_located((By.XPATH, str_xpath_user_field)))
     except TimeoutException:
-        print("Falha ao abrir Instagram")
+        get_run_logger().warning("Falha ao abrir Instagram")
     input_user = in_driver.find_element(By.XPATH, str_xpath_user_field)
     input_user.send_keys(user_id)
 
@@ -50,7 +50,7 @@ def keep_browser_open(in_driver):
         try:
             body_text = in_driver.find_element(By.TAG_NAME, 'body').text
             time.sleep(60)
-            print("still running")
+            print("Still running.")
         except:
-            print("instance of browser is probably closed at this point, ending run...")
+            get_run_logger().warning("Instance of browser is probably closed at this point, ending run...")
             break
