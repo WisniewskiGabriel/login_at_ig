@@ -48,7 +48,7 @@ def input_data_at_login(in_driver):
 @task(name="keep_browser_running")
 def keep_browser_open(in_driver):
 
-    wait_time = 3
+    wait_time = 60
 
     while True:
         try:
@@ -57,6 +57,6 @@ def keep_browser_open(in_driver):
         except:
             get_run_logger().warning("Instance of browser is probably closed at this point, ending run...")
             break
-        time.sleep(3)
+        time.sleep(wait_time)
         if wait_time > 10000:
             break
