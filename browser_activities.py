@@ -1,5 +1,5 @@
 import time
-
+from prefect import task
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
@@ -10,6 +10,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from utils import get_credentials
 
 
+@task(name="start_browser")
 def start_browser():
     ChromeDriverManager().install()
     driver = webdriver.Chrome()
@@ -17,6 +18,7 @@ def start_browser():
     return driver
 
 
+@task(name="input_data_at_login")
 def input_data_at_login(in_driver):
     user_id, user_password = get_credentials("gabrunberg-at-ig")
 
@@ -42,11 +44,12 @@ def input_data_at_login(in_driver):
     return in_driver
 
 
+@task(name="keep_browser_running")
 def keep_browser_open(in_driver):
     while True:
         try:
             body_text = in_driver.find_element(By.TAG_NAME, 'body').text
-            time.sleep(5)
+            time.sleep(60)
             print("still running")
         except:
             print("instance of browser is probably closed at this point, ending run...")
