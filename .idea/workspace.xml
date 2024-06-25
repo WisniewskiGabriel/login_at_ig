@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18f6c5ea-d36d-4efd-af40-1a88c956feb3" name="Changes" comment="">
+    <list default="true" id="18f6c5ea-d36d-4efd-af40-1a88c956feb3" name="Changes" comment="add get run loggers + fix typos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/browser_activities.py" beforeDir="false" afterPath="$PROJECT_DIR$/browser_activities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +90,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719293036080</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add get run loggers + fix typos">
+      <option name="closed" value="true" />
+      <created>1719293558539</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1719293558539</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -99,6 +106,7 @@
     <MESSAGE value="add main fn" />
     <MESSAGE value="ajustar decoradores" />
     <MESSAGE value="subir yaml do deployment" />
-    <option name="LAST_COMMIT_MESSAGE" value="subir yaml do deployment" />
+    <MESSAGE value="add get run loggers + fix typos" />
+    <option name="LAST_COMMIT_MESSAGE" value="add get run loggers + fix typos" />
   </component>
 </project>
