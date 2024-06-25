@@ -15,6 +15,7 @@ def start_browser():
     ChromeDriverManager().install()
     driver = webdriver.Chrome()
     driver.get("https://instagram.com")
+    driver.maximize_window()
     return driver
 
 
